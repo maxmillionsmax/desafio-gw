@@ -30,6 +30,7 @@ namespace projeto_gw
 
         public static void Main()
         {
+            InserirDadosTestes();
             bool sair = false;
             while (!sair)
             {
@@ -40,6 +41,7 @@ namespace projeto_gw
                 Console.WriteLine("4. Listar atendimentos");
                 Console.WriteLine("5. Total de procedimento");
                 Console.WriteLine("6. Tempo em procedimento(s)");
+                Console.WriteLine("7. Apagar dados");
                 Console.WriteLine("0. Para finalizar o programa!");
                 Console.WriteLine("------------------------------------");
 
@@ -64,6 +66,9 @@ namespace projeto_gw
                         break;
                     case 6:
                         TempoTotalProcedimento();
+                        break;
+                    case 7:
+                        ApagarDados();
                         break;
                     case 0:
                         sair = true;
@@ -437,7 +442,75 @@ namespace projeto_gw
             }
         }
 
+        static void InserirDadosTestes()      
+        {
+            Paciente paciente1 = new Paciente
+            {
+                NomeCompleto = "João Silva",
+                NomeMae = "Maria Silva",
+                DataNascimento = new DateTime(1980, 1, 1),
+                Sexo = 'M',
+                CPF = "12345678901"
+            };
+            Pacientes.Add(paciente1);
 
+            Paciente paciente2 = new Paciente
+            {
+                NomeCompleto = "Ana Souza",
+                NomeMae = "Carla Souza",
+                DataNascimento = new DateTime(1990, 2, 2),
+                Sexo = 'F',
+                CPF = "23456789012"
+            };
+            Pacientes.Add(paciente2);
+                        
+            Atendimento atendimento1 = new Atendimento
+            {
+                Paciente = paciente1,
+                DataAtendimento = new DateTime(2023, 1, 1),
+                Procedimento = "Raios – X de Tórax em PA",
+                Duracao = TimeSpan.FromMinutes(30),
+                Codigo = "ATEND12345"
+            };
+            Atendimentos.Add(atendimento1);
+
+            Atendimento atendimento2 = new Atendimento
+            {
+                Paciente = paciente1,
+                DataAtendimento = new DateTime(2023, 2, 2),
+                Procedimento = "Ultrassonografia de Próstata",
+                Duracao = TimeSpan.FromMinutes(45),
+                Codigo = "ATEND12346"
+            };
+            Atendimentos.Add(atendimento2);
+
+            Atendimento atendimento3 = new Atendimento
+            {
+                Paciente = paciente2,
+                DataAtendimento = new DateTime(2023, 3, 3),
+                Procedimento = "Ultrassonografia Obstétrica",
+                Duracao = TimeSpan.FromMinutes(60),
+                Codigo = "ATEND67890"
+            };
+            Atendimentos.Add(atendimento3);
+
+            Atendimento atendimento4 = new Atendimento
+            {
+                Paciente = paciente2,
+                DataAtendimento = new DateTime(2023, 4, 4),
+                Procedimento = "Tomografia",
+                Duracao = TimeSpan.FromMinutes(90),
+                Codigo = "ATEND67891"
+            };
+            Atendimentos.Add(atendimento4);
+        }
+
+        static void ApagarDados()
+        {            
+            Atendimentos.Clear();
+                        
+            Pacientes.Clear();
+        }
 
     }
 
