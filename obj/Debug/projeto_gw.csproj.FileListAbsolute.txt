@@ -1,0 +1,8 @@
+C:\C#\projeto_GW\projeto_gw\bin\Debug\projeto_gw.exe.config
+C:\C#\projeto_GW\projeto_gw\bin\Debug\projeto_gw.exe
+C:\C#\projeto_GW\projeto_gw\bin\Debug\projeto_gw.pdb
+C:\C#\projeto_GW\projeto_gw\obj\Debug\projeto_gw.csproj.AssemblyReference.cache
+C:\C#\projeto_GW\projeto_gw\obj\Debug\projeto_gw.csproj.SuggestedBindingRedirects.cache
+C:\C#\projeto_GW\projeto_gw\obj\Debug\projeto_gw.csproj.CoreCompileInputs.cache
+C:\C#\projeto_GW\projeto_gw\obj\Debug\projeto_gw.exe
+C:\C#\projeto_GW\projeto_gw\obj\Debug\projeto_gw.pdb
