@@ -41,7 +41,7 @@ namespace projeto_gw
                 Console.WriteLine("4. Listar atendimentos");
                 Console.WriteLine("5. Total de procedimento");
                 Console.WriteLine("6. Tempo em procedimento(s)");
-                Console.WriteLine("7. Apagar dados");
+                Console.WriteLine("7. Apagar todos os dados");
                 Console.WriteLine("0. Para finalizar o programa!");
                 Console.WriteLine("------------------------------------");
 
@@ -135,19 +135,29 @@ namespace projeto_gw
         static void RealizarAtendimento()
         {
 
-                Console.WriteLine("Digite o nome completo, a data de nascimento (dd/MM/yyyy) ou o CPF do paciente:");
+                Console.WriteLine("Digite o nome completo, a data de nascimento (dd/MM/yyyy) ou o CPF(11 numeros) do paciente :");
                 string busca = Console.ReadLine();
 
                 Paciente pacienteBuscado = Pacientes.Find(p => p.NomeCompleto == busca || p.DataNascimento.ToString("dd/MM/yyyy") == busca || p.CPF == busca);
                 if (pacienteBuscado == null)
+                {                    
+                
+                Console.WriteLine("Paciente não encontrado. Gostaria de cadastrar um novo paciente? (Sim ou Não)");
+                string resposta1 = Console.ReadLine().ToUpper();
+                if (resposta1 == "SIM")
                 {
-                    Console.WriteLine("Paciente não encontrado. Cadastre o paciente antes de realizar o atendimento.");
+                    CadastrarPaciente();
                     return;
+                }
+                else
+                {
+                    return;
+                }
                 }
 
                 Console.WriteLine("Registrar atendimento para " + pacienteBuscado.NomeCompleto + "? (Sim ou Não)");
-                string resposta = Console.ReadLine().ToUpper();
-                if (resposta != "SIM")
+                string resposta2 = Console.ReadLine().ToUpper();
+                if (resposta2 != "SIM")
                 {
                     return;
                 }
